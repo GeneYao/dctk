@@ -1,19 +1,19 @@
-/* A Bison parser, made by GNU Bison 2.5.  */
+/* A Bison parser, made by GNU Bison 3.0.4.  */
 
 /* Bison interface for Yacc-like parsers in C
-   
-      Copyright (C) 1984, 1989-1990, 2000-2011 Free Software Foundation, Inc.
-   
+
+   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
+
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
    (at your option) any later version.
-   
+
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-   
+
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
@@ -26,45 +26,53 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-   
+
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
+#ifndef YY_SYNTAX_PARSER_SYNTAX_PARSER_H_INCLUDED
+# define YY_SYNTAX_PARSER_SYNTAX_PARSER_H_INCLUDED
+/* Debug traces.  */
+#ifndef YYDEBUG
+# define YYDEBUG 0
+#endif
+#if YYDEBUG
+extern int syntax_parser_debug;
+#endif
 
-/* Tokens.  */
+/* Token type.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
-   /* Put the tokens into the symbol table, so that GDB and other debuggers
-      know about them.  */
-   enum yytokentype {
-     COMMA = 258,
-     SEMI = 259,
-     LPAR = 260,
-     RPAR = 261,
-     LCURLY = 262,
-     RCURLY = 263,
-     COLON = 264,
-     LBRACK = 265,
-     RBRACK = 266,
-     KW_FLOAT = 267,
-     KW_STRING = 268,
-     KW_ENUM = 269,
-     KW_UNK_ARGS = 270,
-     KW_INTEGER = 271,
-     KW_VIRTATTR = 272,
-     KW_SHORT = 273,
-     KW_OR = 274,
-     KW_AND = 275,
-     KW_BOOLEAN = 276,
-     COLONEQ = 277,
-     KW_LIST = 278,
-     GREATERTHAN = 279,
-     LESSTHAN = 280,
-     DOTS = 281,
-     NUM = 282,
-     STRING = 283,
-     IDENT = 284
-   };
+  enum yytokentype
+  {
+    COMMA = 258,
+    SEMI = 259,
+    LPAR = 260,
+    RPAR = 261,
+    LCURLY = 262,
+    RCURLY = 263,
+    COLON = 264,
+    LBRACK = 265,
+    RBRACK = 266,
+    KW_FLOAT = 267,
+    KW_STRING = 268,
+    KW_ENUM = 269,
+    KW_UNK_ARGS = 270,
+    KW_INTEGER = 271,
+    KW_VIRTATTR = 272,
+    KW_SHORT = 273,
+    KW_OR = 274,
+    KW_AND = 275,
+    KW_BOOLEAN = 276,
+    COLONEQ = 277,
+    KW_LIST = 278,
+    GREATERTHAN = 279,
+    LESSTHAN = 280,
+    DOTS = 281,
+    NUM = 282,
+    STRING = 283,
+    IDENT = 284
+  };
 #endif
 /* Tokens.  */
 #define COMMA 258
@@ -95,15 +103,12 @@
 #define STRING 283
 #define IDENT 284
 
-
-
-
+/* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE
-{
 
-/* Line 2068 of yacc.c  */
-#line 53 "syntax_parser.y"
+union YYSTYPE
+{
+#line 53 "syntax_parser.y" /* yacc.c:1909  */
 
 	char *str;
 	double num;
@@ -119,16 +124,17 @@ typedef union YYSTYPE
 	libsynt_head *head;
 	libsynt_technology *tech;
 
+#line 128 "syntax_parser.h" /* yacc.c:1909  */
+};
 
-
-/* Line 2068 of yacc.c  */
-#line 126 "syntax_parser.h"
-} YYSTYPE;
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
-# define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 #endif
 
+
 extern YYSTYPE syntax_parser_lval;
 
+int syntax_parser_parse (void);
 
+#endif /* !YY_SYNTAX_PARSER_SYNTAX_PARSER_H_INCLUDED  */

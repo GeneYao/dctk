@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(USE_WERROR ON)
 #set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O2")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O2 -fopenmp")
 message(STATUS "CMAKE_BUILD_TYPE: " ${CMAKE_BUILD_TYPE})
 message(STATUS "CMAKE_CXX_COMPILER: " ${CMAKE_CXX_COMPILER})
 message(STATUS "CMAKE_CXX_FLAGS: " ${CMAKE_CXX_FLAGS})
@@ -50,7 +50,7 @@ add_library(dctk src/Circuit.cpp src/liberty_reader.cpp src/CellLib.cpp src/Cell
 # contestant's delay calculation code/library
 include_directories(src-dut)
 link_directories(src-dut)
-add_library(dut src-dut/delay_calculator.cpp)
+add_library(dut src-dut/delay_calculator.cpp src-dut/circuit_sim.cpp src-dut/current_table.cpp src-dut/delay_fall.cpp src-dut/delay_fall_lin.cpp src-dut/delay_rise.cpp src-dut/delay_rise_lin.cpp src-dut/os_service.cpp src-dut/receiver_table.cpp src-dut/score_delays.cpp src-dut/score_slews.cpp src-dut/slew_fall.cpp src-dut/slew_fall_lin.cpp src-dut/slew_rise.cpp src-dut/slew_rise_lin.cpp src-dut/waveform.cpp)
 
 # benchmarking executable
 add_executable(delay_calc_tool src/delay_calc_tool.cpp)
