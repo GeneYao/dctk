@@ -1,9 +1,10 @@
-# Delay Calculation ToolKit (dctk)
+# Delay Calculation ToolKit (dctk), NTU iTimer, 2020 contest version
 
 ## Introduction
 
-This toolkit is currently used to house the files for the TAU 2020 contest.
-Please look in INSTALL.md for installation and testing directions.
+This git repository is forked from [geochrist/dctk](https://github.com/geochrist/dctk)
+and is made for reference of the [TAU 2021 contest](https://sites.google.com/view/tau-contest-2021/home) only.
+Please follow the instructions and refer to contest's FAQ page.
 
 ## Inventory
 `src/` contains the source files for the infrastructure. The contestants
